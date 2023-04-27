@@ -1,0 +1,360 @@
+a {
+  text-decoration: none;
+  color: white;
+}
+
+header {
+  height: 63px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  height: auto;
+  margin-bottom: -30px;
+  position: relative;
+  z-index: 1;
+}
+header i {
+  position: absolute;
+  top: 26px;
+  left: 23px;
+  height: 16px;
+  width: 17px;
+  z-index: 3;
+  color: black;
+}
+header .logo {
+  width: 100%;
+  height: 65px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+header .logo img {
+  width: 175px;
+  height: 35px;
+}
+header .picture {
+  width: 100%;
+}
+header .picture img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 0% 60%;
+     object-position: 0% 60%;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  max-width: 800px;
+}
+body .container {
+  background-color: #F7F7F7;
+  border-radius: 30px 30px 0px 0px;
+  position: relative;
+  z-index: 2;
+}
+body .container .title {
+  padding-top: 20px;
+  font-family: "Shrikhand";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 25px;
+  gap: 5px;
+}
+body .container .title .heart {
+  position: relative;
+}
+body .container .title .heart .full-heart {
+  position: absolute;
+  top: auto;
+  left: 0;
+  color: #9356DC;
+  opacity: 0;
+}
+body .container .title .heart:hover > .full-heart {
+  animation: fullHeart 800ms forwards;
+}
+body .container .title .heart:not(:hover) > .full-heart {
+  animation: emptyHeart 800ms backwards;
+}
+@keyframes fullHeart {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes emptyHeart {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+body .container section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: auto;
+}
+body .container section h3 {
+  margin-top: 25px;
+  margin-left: 2%;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+}
+body .container section .underline {
+  border: 2px solid #99E2D0;
+  width: 40px;
+  margin-left: 2%;
+  margin-bottom: 10px;
+}
+body .container section .centrage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 25px;
+}
+body .container section .centrage article {
+  width: 90%;
+  height: 70px;
+  border-radius: 15px;
+  background-color: white;
+  font-family: "Roboto";
+  font-weight: 500;
+  font-style: normal;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: hidden;
+}
+body .container section .centrage article:hover > .selected {
+  animation-name: check;
+  animation-duration: 800ms;
+  animation-fill-mode: both;
+}
+@keyframes check {
+  0% {
+    margin-right: -75px;
+  }
+  100% {
+    margin-right: -15px;
+  }
+}
+body .container section .centrage article:not(:hover) > .selected {
+  animation-name: uncheck;
+  animation-duration: 800ms;
+  animation-fill-mode: backwards;
+}
+@keyframes uncheck {
+  0% {
+    margin-right: -15px;
+  }
+  100% {
+    margin-right: -75px;
+  }
+}
+body .container section .centrage article .selected {
+  margin-right: -75px;
+  width: 60px;
+  height: 70px;
+  border-radius: 0px 15px 15px 0px;
+  background-color: #99E2D0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .container section .centrage article .selected i {
+  color: white;
+}
+body .container section .centrage article .assemblage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+body .container section .centrage article .assemblage h4 {
+  font-size: 18px;
+  line-height: 21px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+body .container section .centrage article .assemblage .description {
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+body .container section .centrage article .assemblage .description p:last-child {
+  margin-right: 10px;
+}
+body .container section .centrage article .assemblage .description p:first-child {
+  font-weight: 300;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+body .container section .centrage .entree,
+body .container section .centrage .plat,
+body .container section .centrage .dessert {
+  animation-name: slide;
+  animation-duration: 1500ms;
+  animation-delay: 100ms;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+body .container section .centrage .plat {
+  animation-delay: 350ms;
+}
+body .container section .centrage .dessert {
+  animation-delay: 500ms;
+}
+@keyframes slide {
+  0% {
+    margin-left: 2000px;
+    opacity: 0;
+  }
+  100% {
+    margin-left: 0px;
+    opacity: 1;
+  }
+}
+body .container .validation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 130px;
+}
+body .container .validation .button {
+  background: linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+  box-shadow: 0px 4px 10px rgba(66, 65, 65, 0.25);
+  border-radius: 25px;
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  width: 220px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .container .validation .button:hover {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+footer {
+  background: #353535;
+  color: white;
+  height: 200px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 19px;
+  padding-left: 5%;
+  padding-top: 25px;
+  text-align: start;
+}
+footer h3 {
+  font-family: "Shrikhand";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  margin-bottom: 25px;
+}
+footer div {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+footer div a:visited {
+  color: white;
+}
+footer div a i {
+  margin-right: 10px;
+}
+
+@media screen and (min-width: 800px) {
+  header i {
+    top: 42px;
+  }
+  header .logo {
+    height: 100px;
+    background-color: white;
+    margin-bottom: 0px;
+  }
+  header .picture {
+    height: 345px;
+  }
+  body {
+    max-width: 2000px;
+    margin: auto;
+  }
+  body .container {
+    max-width: 1055px;
+    margin: auto;
+  }
+  body .container .title {
+    justify-content: center;
+    gap: 30px;
+  }
+  body .container section {
+    max-width: 635px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  footer {
+    height: 115px;
+    padding-top: 0px;
+    padding-left: 0px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: end;
+    align-items: center;
+    gap: 30px;
+    padding-right: 30px;
+  }
+  footer h3 {
+    margin-bottom: 0px;
+  }
+  footer div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    gap: 1px;
+    width: 80%;
+    max-width: 1000px;
+  }
+}/*# sourceMappingURL=menus2.css.map */
