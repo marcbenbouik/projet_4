@@ -328,6 +328,7 @@ a:visited {
 .full-heart {
     color: #9356DC;
     opacity: 0;
+    clip-path: circle(0% at 50% 100%);
 }
 
 .heart:hover>.full-heart {
