@@ -337,10 +337,12 @@ a:visited {
 @keyframes fullHeart {
     0% {
         opacity: 0;
+        clip-path: circle(0% at 50% 100%);
     }
 
     100% {
         opacity: 1;
+        clip-path: circle(100% at 50% 100%);
         ;
     }
 }
@@ -352,10 +354,12 @@ a:visited {
 @keyframes emptyHeart {
     0% {
         opacity: 1;
+        clip-path: circle(100% at 50% 100%);
     }
 
     100% {
         opacity: 0;
+        clip-path: circle(0% at 50% 100%);
         ;
     }
 }

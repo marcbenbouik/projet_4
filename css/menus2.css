@@ -81,6 +81,8 @@ body .container .title .heart .full-heart {
   left: 0;
   color: #9356DC;
   opacity: 0;
+  -webkit-clip-path: circle(0% at 50% 100%);
+          clip-path: circle(0% at 50% 100%);
 }
 body .container .title .heart:hover > .full-heart {
   animation: fullHeart 800ms forwards;
@@ -91,17 +93,25 @@ body .container .title .heart:not(:hover) > .full-heart {
 @keyframes fullHeart {
   0% {
     opacity: 0;
+    -webkit-clip-path: circle(0% at 50% 100%);
+            clip-path: circle(0% at 50% 100%);
   }
   100% {
     opacity: 1;
+    -webkit-clip-path: circle(100% at 50% 100%);
+            clip-path: circle(100% at 50% 100%);
   }
 }
 @keyframes emptyHeart {
   0% {
     opacity: 1;
+    -webkit-clip-path: circle(100% at 50% 100%);
+            clip-path: circle(100% at 50% 100%);
   }
   100% {
     opacity: 0;
+    -webkit-clip-path: circle(0% at 50% 100%);
+            clip-path: circle(0% at 50% 100%);
   }
 }
 body .container section {
@@ -151,7 +161,7 @@ body .container section .centrage article {
 body .container section .centrage article:hover > .selected {
   animation-name: check;
   animation-duration: 800ms;
-  animation-fill-mode: both;
+  animation-fill-mode: backwards;
 }
 @keyframes check {
   0% {
@@ -164,7 +174,7 @@ body .container section .centrage article:hover > .selected {
 body .container section .centrage article:not(:hover) > .selected {
   animation-name: uncheck;
   animation-duration: 800ms;
-  animation-fill-mode: backwards;
+  animation-fill-mode: both;
 }
 @keyframes uncheck {
   0% {

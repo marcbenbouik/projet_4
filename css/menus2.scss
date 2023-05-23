@@ -78,13 +78,13 @@ body {
             .heart {
                 position: relative;
 
-
                 .full-heart {
                     position: absolute;
                     top: auto;
                     left: 0;
                     color: #9356DC;
                     opacity: 0;
+                    clip-path: circle(0% at 50% 100%);
                 }
 
                 &:hover>.full-heart {
@@ -100,11 +100,12 @@ body {
         @keyframes fullHeart {
             0% {
                 opacity: 0;
+                clip-path: circle(0% at 50% 100%);
             }
 
             100% {
                 opacity: 1;
-                ;
+                clip-path: circle(100% at 50% 100%);
             }
         }
 
@@ -113,11 +114,12 @@ body {
         @keyframes emptyHeart {
             0% {
                 opacity: 1;
+                clip-path: circle(100% at 50% 100%);
             }
 
             100% {
                 opacity: 0;
-                ;
+                clip-path: circle(0% at 50% 100%);
             }
         }
 
@@ -170,7 +172,7 @@ body {
                     &:hover>.selected {
                         animation-name: check;
                         animation-duration: 800ms;
-                        animation-fill-mode: both;
+                        animation-fill-mode: backwards;
                     }
 
                     @keyframes check {
@@ -186,7 +188,7 @@ body {
                     &:not(:hover)>.selected {
                         animation-name: uncheck;
                         animation-duration: 800ms;
-                        animation-fill-mode: backwards;
+                        animation-fill-mode: both;
                     }
 
                     @keyframes uncheck {
