@@ -161,7 +161,7 @@ body .container section .centrage article {
 body .container section .centrage article:hover > .selected {
   animation-name: check;
   animation-duration: 800ms;
-  animation-fill-mode: backwards;
+  animation-fill-mode: forwards;
 }
 @keyframes check {
   0% {
@@ -174,7 +174,7 @@ body .container section .centrage article:hover > .selected {
 body .container section .centrage article:not(:hover) > .selected {
   animation-name: uncheck;
   animation-duration: 800ms;
-  animation-fill-mode: both;
+  animation-fill-mode: forwards;
 }
 @keyframes uncheck {
   0% {
